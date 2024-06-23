@@ -1,0 +1,38 @@
+Write a program to sort the elements in an odd position in descending order and elements in even position in ascending order
+Sample Input:
+7
+13 2 4 15 12 10 5
+Sample Output:
+15 2 13 4 12 5 10
+=====================================================================================================================================
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+    int n;
+    scanf("%d",&n);
+    int a[n],l=0,m=n-1;
+    for(int i=0;i<n;i++)
+    scanf("%d",&a[i]);
+    for(int i=0;i<n-1;i++){
+        for(int j=i;j<n;j++){
+            if(a[j]<a[i]){
+                int t=a[j];
+                a[j]=a[i];
+                a[i]=t;
+            }
+        }
+    }
+    for(int i=0;i<n;i++){
+        if(i%2!=0){
+            printf("%d ",a[l]);
+            l++;
+        }
+        else{
+            printf("%d ",a[m]);
+            m--;
+        }
+    }
+
+    return 0;
+}
