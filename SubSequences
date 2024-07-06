@@ -1,0 +1,32 @@
+import java.util.*;
+class SubSequences{
+public static void main(String args[]){
+Scanner s=new Scanner(System.in);
+int n=s.nextInt();
+int k,i,ls=0;
+int a[]=new int[n];
+for(i=0;i<n;i++)
+a[i]=s.nextInt();
+for(i=0;i<n-1;i++){
+int rs=0;
+ls=ls+a[i];
+for(int j=i+1;j<n;j++){
+rs=rs+a[j];
+}
+if(ls==rs)
+{
+k=i;
+break;
+}
+}
+if(i==n-1){
+System.out.print("no sub sequence");
+return;
+}
+for(int j=0;j<=i;j++)
+System.out.print(a[j]+" ");
+System.out.println();
+for(int j=i+1;j<n;j++)
+System.out.print(a[j]+" ");
+}
+}
